@@ -1,41 +1,91 @@
-# Few-Shot Finance Earnings Call Analyzer
+# Few-Shot Finance: AI-Powered Earnings Call Analysis
 
-This project uses a Large Language Model (LLM) API to analyze earnings call transcripts, splitting them into question-answer pairs and tagging each answer as either an "answer" (substantive) or "nonanswer" (vague/evasive). It is designed for financial analysts and researchers who want to automate the extraction of actionable insights from conference call transcripts.
+## Overview
+Few-Shot Finance is an advanced Natural Language Processing (NLP) tool that leverages Large Language Models (LLMs) to analyze earnings call transcripts. The system automatically processes financial transcripts, breaking them down into question-answer pairs and intelligently classifying responses as either substantive answers or non-answers, providing valuable insights for financial analysis.
 
-## Features
-- Splits transcripts into question-answer pairs
-- Tags answers as "answer" or "nonanswer" with justifications
-- Uses a few-shot prompt template for high accuracy
+## Key Features
+- **Intelligent Q&A Extraction**: Automatically splits transcripts into structured question-answer pairs
+- **Response Classification**: Tags answers as either "answer" (substantive) or "nonanswer" (evasive/vague)
+- **Detailed Analysis**: Provides justification for each classification
+- **Few-Shot Learning**: Utilizes few-shot prompting for improved accuracy
+- **Easy Integration**: Simple API interface for seamless integration
 
-## Setup
-1. **Clone the repository**
-2. **Install dependencies:**
+## Technical Architecture
+- **Language**: Python 3.8+
+- **Main Dependencies**:
+  - LLM API Integration
+  - Natural Language Processing Libraries
+  - Environment Configuration Management
+
+## Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/syed-shahbuddin/few-shot-finance-AI.git
+   cd few-shot-finance-AI
+   ```
+
+2. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
-3. **Set your API key:**
+
+3. **Configure API Key**
    - Create a `.env` file in the project root:
      ```
      HYPERBOLIC_API_KEY=your_api_key_here
      ```
-   - Or set the environment variable directly in your shell.
+   - Or set it as an environment variable:
+     ```bash
+     export HYPERBOLIC_API_KEY=your_api_key_here
+     ```
 
 ## Usage
-Run the script with:
+
+### Basic Usage
 ```bash
-python few-shot-finance (3).py
+python few-shot-finance.py
 ```
 
-The script will send a sample transcript to the LLM API and print the extracted question-answer pairs with tags.
+### Example Output
+```json
+{
+    "question": "Can you discuss the Q4 revenue growth?",
+    "answer": "Revenue grew 15% YoY to $2.3B...",
+    "classification": "answer",
+    "justification": "Provides specific numbers and growth metrics"
+}
+```
 
-## Security Best Practices
-- **Never** hardcode your API key in the code.
-- Use environment variables or a `.env` file (which is gitignored).
-- Rotate your API key if you suspect it has been exposed.
-- Do not share logs or error messages that may contain sensitive data.
+## Security Considerations
+- Never commit API keys or sensitive credentials
+- Use environment variables for configuration
+- Regularly rotate API keys
+- Monitor API usage and set appropriate rate limits
+
+## Contributing
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your branch
+5. Create a Pull Request
+
+### Development Guidelines
+- Follow PEP 8 style guide
+- Add unit tests for new features
+- Update documentation as needed
+- Use meaningful commit messages
 
 ## License
-See [LICENSE](LICENSE) for license information.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Disclaimer
-This project is for educational and research purposes. Use at your own risk. 
+This tool is provided for research and educational purposes only. Users should exercise their own judgment in making investment decisions. The developers are not responsible for any financial decisions made based on the tool's output.
+
+## Contact
+For questions or support, please open an issue in the GitHub repository.
+
+---
+Made with ❤️ by Syed Shahbuddin 
